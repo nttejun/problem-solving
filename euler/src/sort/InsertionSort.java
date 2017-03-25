@@ -4,18 +4,21 @@ public class InsertionSort {
 
 	public static void main(String[] args) {
 
-		int[] a = {10, 900, 500, 33, 77, 200, 100, 30, 15};
+		int min=0;
+		int[] array={100, 3, 500, 1, 8, 600 , 2, 400, 15, 80};
+		
+		for(int n=0; n<array.length; n++){
 
-		for(int value=0; value<a.length; value++){
-			for(int rotation=value+1; rotation<a.length; rotation++){
-				if(a[rotation]<a[value]){
-					int change = a[rotation];
-					a[rotation] = a[value];
-					a[value] = change;
+			for(int i=n+1; i<array.length; i++){
+				if(array[i]<array[n]){
+					min = array[i];
+					array[i] = array[n];
+					array[n] = min;
 				}
-			} 
+			}
 		}
-		for(int index=0; index<a.length; index++)
-			System.out.println(a[index]);
+		for(int index=0; index<array.length; index++){
+			System.out.println(array[index]);	
+		}
 	}
 }
