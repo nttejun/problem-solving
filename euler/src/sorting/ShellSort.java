@@ -26,7 +26,7 @@ public class ShellSort {
 					value[i] = largest;
 					System.out.println("Success Before -> value[" + (i+change) + "] = " + value[i]+" -> After value["+i+"] = " +value[i]);
 				}
-			}
+			} 
 				for (index = 0; index < value.length; index++) {
 				System.out.println("��� value[" + index + "] = " + value[index]);
 			}				
