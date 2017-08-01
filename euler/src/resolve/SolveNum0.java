@@ -5,8 +5,7 @@ import java.util.ArrayList;
 public class SolveNum0 {
 
 	public static void main(String[] args) {
-		// 1���� 100���� �Ҽ��� ���϶�	
-		
+
 		ArrayList<Integer> print = decimalValue();
 		System.out.println(print);
 	}
