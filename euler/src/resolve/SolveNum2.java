@@ -3,8 +3,7 @@ package resolve;
 public class SolveNum2 {
 
 	public static void main(String[] args) {
-		// �Ǻ���ġ ���� ¦�� 4�鸸 ������ ��� ���� ���ϸ� ���Դϱ�?
-		
+
 		int maxNum = 4000000;
 		int num1 = 1;
 		int num2 = 2;
