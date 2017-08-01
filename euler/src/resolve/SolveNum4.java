@@ -17,7 +17,7 @@ public class SolveNum4 {
 
         for(int a = binary.length(); a > 0; a --){
             String str = binary.substring(a-1, a);
-
+ 
             if(Integer.parseInt(str) >= 2){
                 System.out.println("입력값이 2진수가 아닙니다");
                 break;
