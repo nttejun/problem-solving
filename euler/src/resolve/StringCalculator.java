@@ -8,6 +8,7 @@ public class StringCalculator {
 
         StringCalculator stringCalculation = new StringCalculator();
         stringCalculation.add("3,4,5;0");
+
     }
 
     public int add(String testStr) {
@@ -21,6 +22,12 @@ public class StringCalculator {
         }
 
         testStrAry = testStr.split(",|;");
+
+        return sum(testStrAry);
+
+    }
+
+    private int sum(String[] testStrAry){
 
         int testInt = 0;
 
