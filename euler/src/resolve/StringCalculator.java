@@ -1,5 +1,8 @@
 package resolve;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
 
 /**
@@ -10,7 +13,7 @@ public class StringCalculator {
 
         StringCalculator stringCalculation = new StringCalculator();
 
-        stringCalculation.textAdd("3,4,5;0");
+        stringCalculation.textAdd("//,\n2,4,3");
 
     }
 
@@ -34,9 +37,28 @@ public class StringCalculator {
 
     private String[] textSplit(String inputText) {
 
+        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(inputText);
+
+        if(matcher.find()){
+
+            return matcherSplit(inputText, matcher);
+
+        }
+
         return inputText.split(",|;");
 
     }
+
+    private String[] matcherSplit(String inputText, Matcher matcher){
+
+        String customerDelimeter = matcher.group(1);
+
+        String test[] = matcher.group(2).split(customerDelimeter);
+
+        return matcher.group(2).split(customerDelimeter);
+
+    }
+
 
     private int toIntSum(String[] inputTextAry) {
 
@@ -47,6 +69,8 @@ public class StringCalculator {
             testInt = Integer.parseInt(inputTextAry[index]) + testInt;
 
         }
+
+        System.out.println(testInt);
 
         return testInt;
 
