@@ -62,8 +62,6 @@ public class BucketSort {
 
     public List<List<Integer>> inBucket(List<List<Integer>> bucket, int[] inputList, double divider){
 
-        int[] array = new int[bucket.size()];
-
         for(int index = 0; index < inputList.length; index++){
 
             double calculationDouble = (double) inputList[index] / divider;
