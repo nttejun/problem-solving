@@ -14,8 +14,7 @@ public class RadixSort {
     public void sorting(int[] inputList){
 
         int digit = maxDigit(maxDigitValue(inputList));
-        List<List<Integer>> bucket = makeBucket(inputList);
-        checkDigit(inputList, digit, bucket);
+        checkDigit(inputList, digit);
 
     }
 
@@ -52,7 +51,49 @@ public class RadixSort {
 
     }
 
-    public List<List<Integer>> makeBucket(int[] inputList){
+    public void checkDigit(int[] inputList, int length) {
+
+        int size = length;
+
+        int divideNumber = 1;
+
+        while (size != 0) {
+
+            size --;
+
+            bucketSorting(inputList, divideNumber);
+
+            divideNumber = divideNumber * 10;
+
+
+        }
+    }
+
+    public void bucketSorting(int[] inputList, int divideNumber){
+
+            printResult(getoutInBucket(inputDataInBucket(inputList, divideNumber), inputList));
+
+    }
+
+
+    public List<List<Integer>> inputDataInBucket(int[] inputList, int divideNumber) {
+
+
+        List<List<Integer>> bucket = makeBucket();
+
+        for (int index = 0; index < inputList.length; index++) {
+
+            int bucketData = inputList[index] / divideNumber % 10;
+
+            bucket.get(bucketData).add(inputList[index]);
+
+        }
+
+        return bucket;
+
+    }
+
+    public List<List<Integer>> makeBucket(){
 
         List<List<Integer>> bucket = new ArrayList<>(max);
 
@@ -66,51 +107,39 @@ public class RadixSort {
 
     }
 
-    public void checkDigit(int[] inputList, int length, List<List<Integer>> bucket) {
+    public int[] getoutInBucket(List<List<Integer>> bucket, int[] inputList){
 
-        int size = length;
+        int count = 0;
 
-        int divideNumber = 1;
+        for(int index = 0; index < bucket.size(); index++){
+            for(int rotation = 0; rotation < bucket.get(index).size(); rotation++){
 
-        while (size != 0) {
+                inputList[count] = bucket.get(index).get(rotation);
+                count++;
 
-            size --;
+            }
 
-            inputDataInBucket(inputList, bucket, divideNumber);
+            for(int rotation = 0; rotation < bucket.get(index).size(); rotation++) {
 
-            divideNumber = divideNumber * 10;
+                bucket.get(index).remove(rotation);
 
-        }
-    }
-
-    public List<List<Integer>> inputDataInBucket(int[] inputList, List<List<Integer>> bucket, int divideNumber) {
-
-        for (int index = 0; index < inputList.length; index++) {
-
-            bucket.get((inputList[index] / divideNumber) % 10).add(inputList[index]);
-
-        }
-
-        for(int a = 0; a < bucket.size(); a++){
-            System.out.println("버킷 인덱스 = " + a);
-            for(int b = 0; b < bucket.get(a).size(); b++ ) {
-                System.out.println(bucket.get(a).get(b));
             }
         }
-
-        return bucket;
+        return inputList;
     }
 
+    public void printResult(int[] inputList){
 
+        for(int index = 0; index < inputList.length; index++ ) {
 
-    public void dataOutInBucket(List<List<Integer>> bucket){
+            System.out.println("Sorted inputList["+index+"] = " + inputList[index]);
 
-
+        }
     }
 
     public static void main(String[] args){
 
-        int[] inputList = {999, 22, 555, 33, 46, 88, 11, 0, 9};
+        int[] inputList = {9999, 777, 222, 33, 444, 88, 1111, 0};
 
         RadixSort radixSort = new RadixSort();
 
