@@ -5,12 +5,25 @@ package tree;
  */
 
 class Node {
+
     int data;
     Node left;
     Node right;
+
 }
 
 class TreeObject {
+
+    public Node createNewNode(int val){
+
+        Node node = new Node();
+        node.data = val;
+        node.left = null;
+        node.right = null;
+
+        return node;
+
+    }
 
     public Node insert(Node node, int val) {
 
@@ -36,17 +49,33 @@ class TreeObject {
 
     }
 
-    public Node createNewNode(int val){
 
-        Node node= new Node();
-        node.data = val;
-        node.left = null;
-        node.right = null;
+    public void nodeSearch(Node node, int val) {
 
-        return node;
+        if (node == null) {
 
+            System.out.println("Null");
+
+        }
+
+        if (node.data == val) {
+
+            System.out.println("발견 " + node.data);
+
+        }
+
+        if (node.data < val) {
+
+            nodeSearch(node.right, val);
+
+        }
+
+        if (node.data > val) {
+
+            nodeSearch(node.left, val);
+
+        }
     }
-
 }
 
 public class BinaryTree {
@@ -63,6 +92,8 @@ public class BinaryTree {
         root = treeObject.insert(root, 30);
         root = treeObject.insert(root, 8);
         root = treeObject.insert(root, 45);
+
+        treeObject.nodeSearch(root, 30);
 
     }
 }
