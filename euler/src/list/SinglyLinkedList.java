@@ -1,6 +1,7 @@
 package list;
 
 import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator;
+import org.omg.CORBA.PRIVATE_MEMBER;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.List;
@@ -9,64 +10,54 @@ import java.util.List;
  * Created by nttej on 2017-10-03.
  */
 
-class ListInfo<T> {
 
-    private T data;
-    private ListInfo<T> link;
+class SingleList<T> {
 
-    public ListInfo(T value) {
-        data = value;
-    }
+    class Node<T> {
 
-    public ListInfo<T> link() {
-        return link;
-    }
+        private Node<T> data;
+        private Node next;
 
-    public T value() {
-        return data;
-    }
-
-    public void setValue(T value) {
-        data = value;
-    }
-
-    public void setLink(ListInfo<T> dataElement) {
-        link = dataElement;
-    }
-
-    public ListInfo<Integer> insertList(ListInfo<Integer> list, int data) {
-
-        ListInfo<Integer> listInfo = new ListInfo<Integer>(data);
-
-        listInfo.setLink(list);
-
-        return listInfo;
-
-    }
-
-    public ListInfo<Integer> findList(ListInfo<Integer> head, int data) {
-
-        ListInfo<Integer> element = head;
-
-        while (element != null && element.value() != data) {
-
-            element = element.link();
-
+        public Node(Node<T> getData) {
+            this.data = getData;
+            this.next = null;
         }
 
-        return element;
+        public String toString() {
+            return String.valueOf(this.data);
+        }
 
     }
+
+    private Node head;
+    private Node tail;
+    private int size = 0;
+
+    public void add(T inputData) {
+
+        Node newNode = new Node((Node) inputData);
+        newNode.next = head;
+        head = newNode;
+        size++;
+
+        if (head.next == null) {
+            tail = head;
+        }
+
+    }
+
 }
 
+
 public class SinglyLinkedList {
+
     public static void main(String[] args) {
 
         int data = 10;
 
-        ListInfo<Integer> head = new ListInfo<>(data);
+        SingleList<Integer> inputData = new SingleList<>();
 
-        head.insertList(head, data);
+        inputData.add(data);
 
     }
 }
