@@ -11,7 +11,7 @@ class SinglyLinkedLIst<T> {
 
     private void addNode(T inputData) {
 
-        Node newNode = new Node((Node) inputData);
+        Node newNode = new Node(inputData);
         newNode.pointer = head;
         head = newNode;
         size++;
@@ -24,7 +24,7 @@ class SinglyLinkedLIst<T> {
 
     public void addBack(T inputData) {
 
-        Node newNode = new Node((Node) inputData);
+        Node newNode = new Node(inputData);
         if (size == 0) {
             addNode(inputData);
         } else {
@@ -34,24 +34,40 @@ class SinglyLinkedLIst<T> {
         }
     }
 
+    private Node nodeFind(T inputData) {
+
+        Integer index = (Integer) inputData;
+        Node temporary = head;
+
+        for (int i = 0; i < index; i++) {
+
+            temporary = temporary.pointer;
+
+        }
+
+        return temporary;
+
+    }
+
     class Node<T> {
 
-        private Node<T> data;
+        private T data;
         private Node pointer;
 
-        private Node(Node<T> inputData) {
+        private Node(T inputData) {
             this.data = inputData;
             this.pointer = null;
         }
+
     }
 
 
     public static void main(String[] args) {
 
-        int inputData = 10;
-
         SinglyLinkedLIst<Integer> singlyLinkedLIst = new SinglyLinkedLIst<>();
-        singlyLinkedLIst.addNode(inputData);
+        singlyLinkedLIst.addNode(10);
+        singlyLinkedLIst.addNode(30);
+        System.out.println(singlyLinkedLIst.nodeFind(1));
 
     }
 
