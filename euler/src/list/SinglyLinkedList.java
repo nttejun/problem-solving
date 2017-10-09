@@ -72,7 +72,23 @@ class SinglyLinkedLIst<T> {
             }
         }
     }
-    
+
+    private Node nodeFirstDelete(T inputData) {
+
+        Integer index = (Integer) inputData;
+
+        Node temp = head;
+
+        head = head.pointer;
+
+        Node deleteData = (Node) temp;
+
+        size--;
+
+        return deleteData;
+
+    }
+
     public String toString() {
 
         if (head == null) {
@@ -116,6 +132,7 @@ class SinglyLinkedLIst<T> {
         singlyLinkedLIst.addFirst(30);
         System.out.println(singlyLinkedLIst);
         singlyLinkedLIst.add(1, 15);
+        singlyLinkedLIst.nodeFirstDelete(30);
         System.out.println(singlyLinkedLIst);
     }
 
