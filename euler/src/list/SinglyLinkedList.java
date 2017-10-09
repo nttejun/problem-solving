@@ -73,19 +73,32 @@ class SinglyLinkedLIst<T> {
         }
     }
 
-    private Node nodeFirstDelete(T inputData) {
-
-        Integer index = (Integer) inputData;
+    private Node nodeFirstDelete() {
 
         Node temp = head;
 
         head = head.pointer;
 
-        Node deleteData = (Node) temp;
+        Node deleteData = temp;
 
         size--;
 
         return deleteData;
+
+    }
+
+    private Node nodeSelectDelete(T index){
+
+        Integer intIndex = (Integer) index;
+        intIndex = intIndex - 1;
+
+        Node nodeBefore = nodeFind((T) intIndex);
+
+        Node node = nodeBefore.pointer;
+
+        nodeBefore.pointer = node.pointer;
+
+        return node;
 
     }
 
@@ -130,9 +143,9 @@ class SinglyLinkedLIst<T> {
         SinglyLinkedLIst<Integer> singlyLinkedLIst = new SinglyLinkedLIst<>();
         singlyLinkedLIst.addFirst(10);
         singlyLinkedLIst.addFirst(30);
-        System.out.println(singlyLinkedLIst);
         singlyLinkedLIst.add(1, 15);
-        singlyLinkedLIst.nodeFirstDelete(30);
+        System.out.println(singlyLinkedLIst);
+        singlyLinkedLIst.nodeSelectDelete(1);
         System.out.println(singlyLinkedLIst);
     }
 
