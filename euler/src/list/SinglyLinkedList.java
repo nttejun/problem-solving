@@ -1,63 +1,40 @@
 package list;
 
-import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator;
-import org.omg.CORBA.PRIVATE_MEMBER;
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-import java.util.List;
-
 /**
  * Created by nttej on 2017-10-03.
  */
-
-
-class SingleList<T> {
-
-    class Node<T> {
-
-        private Node<T> data;
-        private Node next;
-
-        public Node(Node<T> getData) {
-            this.data = getData;
-            this.next = null;
-        }
-
-        public String toString() {
-            return String.valueOf(this.data);
-        }
-
-    }
+class SinglyLinkedLIst<T> {
 
     private Node head;
     private Node tail;
     private int size = 0;
 
-    public void add(T inputData) {
-
+    private void addNode(T inputData) {
         Node newNode = new Node((Node) inputData);
-        newNode.next = head;
+        newNode.pointer = head;
         head = newNode;
         size++;
-
-        if (head.next == null) {
-            tail = head;
-        }
-
     }
 
-}
+    class Node<T> {
 
+        private Node<T> data;
+        private Node pointer;
 
-public class SinglyLinkedList {
+        private Node(Node<T> inputData) {
+            this.data = inputData;
+            this.pointer = null;
+        }
+    }
+
 
     public static void main(String[] args) {
 
-        int data = 10;
+        int inputData = 10;
 
-        SingleList<Integer> inputData = new SingleList<>();
-
-        inputData.add(data);
+        SinglyLinkedLIst<Integer> singlyLinkedLIst = new SinglyLinkedLIst<>();
+        singlyLinkedLIst.addNode(inputData);
 
     }
+
 }
