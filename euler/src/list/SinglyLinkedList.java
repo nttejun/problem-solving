@@ -10,10 +10,28 @@ class SinglyLinkedLIst<T> {
     private int size = 0;
 
     private void addNode(T inputData) {
+
         Node newNode = new Node((Node) inputData);
         newNode.pointer = head;
         head = newNode;
         size++;
+
+        if (head.pointer == null) {
+            tail = head;
+        }
+
+    }
+
+    public void addBack(T inputData) {
+
+        Node newNode = new Node((Node) inputData);
+        if (size == 0) {
+            addNode(inputData);
+        } else {
+            tail.pointer = newNode;
+            tail = newNode;
+            size++;
+        }
     }
 
     class Node<T> {
