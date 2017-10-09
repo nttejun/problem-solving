@@ -9,7 +9,7 @@ class SinglyLinkedLIst<T> {
     private Node tail;
     private int size = 0;
 
-    private void addNode(T inputData) {
+    private void addFirst(T inputData) {
 
         Node newNode = new Node(inputData);
         newNode.pointer = head;
@@ -26,7 +26,7 @@ class SinglyLinkedLIst<T> {
 
         Node newNode = new Node(inputData);
         if (size == 0) {
-            addNode(inputData);
+            addFirst(inputData);
         } else {
             tail.pointer = newNode;
             tail = newNode;
@@ -49,6 +49,53 @@ class SinglyLinkedLIst<T> {
 
     }
 
+    private void add(T index, T inputData) {
+
+        Integer integer = (Integer) inputData;
+        Integer indexInteger = (Integer) index;
+        indexInteger = indexInteger - 1;
+
+        if (integer == 0) {
+            addFirst((T) integer);
+        } else {
+
+            Node node = nodeFind((T) indexInteger);
+            Node postponeNode = node.pointer;
+            Node newNode = new Node(inputData);
+
+            node.pointer = newNode;
+            newNode.pointer = postponeNode;
+            size++;
+
+            if (newNode.pointer == null) {
+                tail = newNode;
+            }
+        }
+    }
+    
+    public String toString() {
+
+        if (head == null) {
+
+            return "[]";
+
+        }
+
+        Node temp = head;
+
+        String result = "[";
+
+        while (temp.pointer != null) {
+            result += temp.data + ", ";
+            temp = temp.pointer;
+        }
+
+        result += temp.data;
+
+        return result + "]";
+
+    }
+
     class Node<T> {
 
         private T data;
@@ -65,10 +112,11 @@ class SinglyLinkedLIst<T> {
     public static void main(String[] args) {
 
         SinglyLinkedLIst<Integer> singlyLinkedLIst = new SinglyLinkedLIst<>();
-        singlyLinkedLIst.addNode(10);
-        singlyLinkedLIst.addNode(30);
-        System.out.println(singlyLinkedLIst.nodeFind(1));
-
+        singlyLinkedLIst.addFirst(10);
+        singlyLinkedLIst.addFirst(30);
+        System.out.println(singlyLinkedLIst);
+        singlyLinkedLIst.add(1, 15);
+        System.out.println(singlyLinkedLIst);
     }
 
 }
