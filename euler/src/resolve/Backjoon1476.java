@@ -8,16 +8,9 @@ import java.util.Scanner;
 
 public class Backjoon1476 {
 
-    private static int E;
-    private static int S;
-    private static int M;
+    public void ready(int[] year){
 
-    public void setYear(int[] year){
-        this.E = year[0];
-        this.M = year[1];
-        this.S = year[2];
-
-        int res = play(E, S, M, 0);
+        int res = play(year[0], year[1], year[2], 0);
         System.out.println(res);
     }
 
@@ -60,7 +53,7 @@ public class Backjoon1476 {
 
         Backjoon1476 b1476 = new Backjoon1476();
 
-        b1476.setYear(year);
+        b1476.ready(year);
 
     }
 
