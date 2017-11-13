@@ -10,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
 
+1 day > person1 =  4 , person2 = 5
+status > gap = 1
+
 [입력 값]
 입력 값 범위
 1 <= A, K <= 100
@@ -40,6 +43,7 @@ public class Ebay4 {
 
         int day = p / minus;
 
+        // gap over
         if(p % minus == 0) {
 
             day++;
