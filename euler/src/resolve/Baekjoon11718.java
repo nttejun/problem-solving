@@ -34,14 +34,10 @@ public class Baekjoon11718 {
             tempResult = result + temp;
 
             // 한 줄 최대 글자수 검수
-            if(result.length() > 100){
-                break;
-            }
+            if (chkMax100(result.length())) break;
 
             // 글 전체 최대 문장수 검수
-            if(count > 100){
-                break;
-            }
+            if (chkMax100(count)) break;
 
             // 올바른 문자 사용 검수
             String resultRegex = "(^[a-zA-Z0-9]*$)";
@@ -57,6 +53,13 @@ public class Baekjoon11718 {
 
         System.out.println(result);
 
+    }
+
+    private static boolean chkMax100(int length) {
+        if (length > 100) {
+            return true;
+        }
+        return false;
     }
 
 }
