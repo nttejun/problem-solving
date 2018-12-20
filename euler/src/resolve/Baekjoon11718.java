@@ -29,6 +29,8 @@ public class Baekjoon11718 {
 
         while(scan.hasNext()){
 
+            count++;
+
             String temp = scan.nextLine();
 
             tempResult = result + temp;
@@ -39,9 +41,13 @@ public class Baekjoon11718 {
             // 글 전체 최대 문장수 검수
             if (chkMax100(count)) break;
 
+            // 시작, 끝 문자 공백 검
+            if(tempResult.startsWith(" ")) break;
+            if(tempResult.endsWith(" ")) break;
+
             // 올바른 문자 사용 검수
-            String resultRegex = "(^[a-zA-Z0-9]*$)";
-            if(Pattern.matches(resultRegex, result) == false){
+            String regex = "^([a-zA-Z0-9 ]+)";
+            if(Pattern.matches(regex, tempResult) == false){
                 break;
             }
 
