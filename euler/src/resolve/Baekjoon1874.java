@@ -3,7 +3,6 @@ package resolve;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.Stack;
 
 public class Baekjoon1874 {
@@ -13,24 +12,24 @@ public class Baekjoon1874 {
         StringBuilder builder = new StringBuilder();
 
         int N = Integer.parseInt(reader.readLine());
+
         Stack<Integer> stack = new Stack<>();
         boolean isPossible = true;
 
-        for(int i=0, j=1; i<N; i++){
-            int input = Integer.parseInt(reader.readLine());
-            if(!isPossible)
+        for (int i = 0, j = 1; i < N; i++) {
+            int index = Integer.parseInt(reader.readLine());
+            if (!isPossible)
                 continue;
-            while(j<=input){
+            while (j <= index) {
                 stack.push(j++);
                 builder.append("+\n");
             }
-            if(stack.peek() == input){
+            if (stack.peek() == index) {
                 stack.pop();
-                builder.append("=\n");
-            }
-            else {
-                builder = new StringBuilder("NO\n");
+                builder.append("-\n");
+            } else {
                 isPossible = false;
+                builder = new StringBuilder("NO\n");
             }
         }
 
@@ -38,3 +37,4 @@ public class Baekjoon1874 {
 
     }
 }
+
