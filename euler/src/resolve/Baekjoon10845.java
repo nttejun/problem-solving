@@ -22,23 +22,24 @@ public class Baekjoon10845 {
             String command = reader.readLine();
 
             // int n 입력되지 않는 현상 확인 필요
-            if (command == "push") {
+            if (command.equals("push")) {
                 int n = Integer.parseInt(reader.readLine());
+                System.out.println(n);
                 q.push(n);
                 continue;
             }
 
-            if (command == "pop") {
+            if (command.equals("pop")) {
                 q.pop();
                 continue;
             }
 
-            if (command == "size") {
+            if (command.equals("size")) {
                 builder.append(q.size()+"\n");
                 continue;
             }
 
-            if (command == "empty") {
+            if (command.equals("empty")) {
                 if(q.isEmpty()){
                     builder.append("0\n");
                 } else {
@@ -47,7 +48,7 @@ public class Baekjoon10845 {
                 continue;
             }
 
-            if (command == "front"){
+            if (command.equals("front")){
                 if(q.isEmpty()){
                     builder.append("-1\n");
                 } else {
@@ -56,7 +57,7 @@ public class Baekjoon10845 {
                 continue;
             }
 
-            if (command == "back"){
+            if (command.equals("back")){
                 if(q.isEmpty()){
                     builder.append("-1\n");
                 } else {
