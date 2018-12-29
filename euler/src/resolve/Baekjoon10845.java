@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Queue;
 
 public class Baekjoon10845 {
 
@@ -20,35 +19,39 @@ public class Baekjoon10845 {
         for (int i = 0; i < N; i++) {
 
             String command = reader.readLine();
+            String[] commandVal = command.split(" ");
 
             // int n 입력되지 않는 현상 확인 필요
-            if (command.equals("push")) {
-                int n = Integer.parseInt(reader.readLine());
-                System.out.println(n);
-                q.push(n);
+            if (commandVal[0].equals("push")) {
+                q.add(Integer.valueOf(commandVal[1]));
                 continue;
             }
 
-            if (command.equals("pop")) {
-                q.pop();
-                continue;
-            }
-
-            if (command.equals("size")) {
-                builder.append(q.size()+"\n");
-                continue;
-            }
-
-            if (command.equals("empty")) {
+            if (commandVal[0].equals("pop")) {
                 if(q.isEmpty()){
-                    builder.append("0\n");
+                    builder.append("-1\n");
                 } else {
-                    builder.append("1\n");
+                    builder.append(q.getFirst()+"\n");
+                    q.pop();
                 }
                 continue;
             }
 
-            if (command.equals("front")){
+            if (commandVal[0].equals("size")) {
+                builder.append(q.size()+"\n");
+                continue;
+            }
+
+            if (commandVal[0].equals("empty")) {
+                if(q.isEmpty()){
+                    builder.append("1\n");
+                } else {
+                    builder.append("0\n");
+                }
+                continue;
+            }
+
+            if (commandVal[0].equals("front")){
                 if(q.isEmpty()){
                     builder.append("-1\n");
                 } else {
@@ -57,7 +60,7 @@ public class Baekjoon10845 {
                 continue;
             }
 
-            if (command.equals("back")){
+            if (commandVal[0].equals("back")){
                 if(q.isEmpty()){
                     builder.append("-1\n");
                 } else {
