@@ -21,7 +21,6 @@ public class Baekjoon10845 {
             String command = reader.readLine();
             String[] commandVal = command.split(" ");
 
-            // int n 입력되지 않는 현상 확인 필요
             if (commandVal[0].equals("push")) {
                 q.add(Integer.valueOf(commandVal[1]));
                 continue;
