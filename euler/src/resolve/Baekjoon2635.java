@@ -6,49 +6,43 @@ import java.util.Scanner;
 
 public class Baekjoon2635 {
     public static void main(String[] args) {
+
         StringBuilder builder = new StringBuilder();
         Scanner scan = new Scanner(System.in);
-        List<Integer> list = new ArrayList<>();
 
-        int num = scan.nextInt();
-        if (num >= 30000) return;
-        if (num < 1) return;
-        list.add(num);
+        int num1 = scan.nextInt();
+        if (num1 >= 30000) return;
+        if (num1 < 1) return;
+        builder.append(num1 + " ");
 
-        num = scan.nextInt();
-        if (num < 1) return;
-        list.add(num);
+        int num2 = scan.nextInt();
+        if (num2 < 1) return;
+        builder.append(num2 + " ");
 
         int count = 2;
-        int index = 1;
 
+        int num3;
         boolean flag = false;
-
         while (flag == false) {
 
-            int tmp = list.get(index - 1) - list.get(index);
+            num3 = num1 - num2;
+            num1 = num2;
+            num2 = num3;
 
-            if (tmp < 0) {
+            if (num3 < 0) {
 
                 flag = true;
 
             } else {
 
-                list.add(tmp);
-                index++;
+                builder.append(num3 + " ");
                 count++;
 
             }
         }
 
-        builder.append(count + "\n");
-
-        for (Integer n : list) {
-            builder.append(" " + n);
-        }
-
+        System.out.println(count);
         System.out.println(builder.toString());
 
     }
 }
-
