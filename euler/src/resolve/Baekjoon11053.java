@@ -4,27 +4,20 @@ import java.util.Scanner;
 
 public class Baekjoon11053 {
     public static void main(String[] args){
-        Baekjoon11053 baekjoon11053 = new Baekjoon11053();
-        baekjoon11053.start();
-    }
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] dp = new int[n][2];
+        int max = 1;
 
-    private void start() {
-        Scanner scan = new Scanner(System.in);
-        int N = scan.nextInt();
-        if(N < 1 || N > 1000) return;
-
-        int temp = 0;
-        int length = 0;
-        int max = 0;
-
-        for(int i=0; i<N; i++){
-            temp = scan.nextInt();
-            if(temp < 1 || temp > 1000) return;
-            if(max < temp){
-                max = temp;
-                length++;
+        for(int i=0; i<n; i++){
+            dp[1][0] = 1;
+            dp[i][1] = sc.nextInt();
+            for(int ii = 0; ii < i; i++){
+                if(dp[ii][1] < dp[i][1])
+                    dp[i][0] = Math.max(dp[i][0], dp[ii][0] + 1);
             }
+            max = max < dp[i][0] ? dp[i][0] : max;
         }
-        System.out.println(length);
+        System.out.println(max);
     }
 }
