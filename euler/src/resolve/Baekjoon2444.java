@@ -1,17 +1,20 @@
 package resolve;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Baekjoon2444 {
-    public static void main(String[] main) {
+    public static void main(String[] main) throws IOException {
         Baekjoon2444 baekjoon2444 = new Baekjoon2444();
         baekjoon2444.markStar();
     }
 
-    private void markStar() {
+    private void markStar() throws IOException {
         StringBuilder sb = new StringBuilder();
-        Scanner scan = new Scanner(System.in);
-        int N = scan.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
         int s = 1;
 
         markPlus(sb, N, s);
