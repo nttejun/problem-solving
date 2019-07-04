@@ -2,23 +2,31 @@ package resolve;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ProgLevel1KValue {
 
     public int[] solution(int[] array, int[][] commands) {
-        int[] answer = {};
+        int[] answer = new int[commands.length];
 
         for(int i=0; i<commands.length; i++){
-            int start = commands[i][1];
-            int end = commands[i][2];
+            int start = commands[i][0];
+            int end = commands[i][1];
 
             List<Integer> list = new ArrayList();
-            for(int j=start; j<end; j++){
-                list.add(commands[i][j]);
+
+            for(int j=start-1; j<end; j++){
+                list.add(array[j]);
             }
-            Arrays.sort(new List[]{list});
-            System.out.println(list.toString());
+
+            Collections.sort(list);
+
+            int k = commands[i][2];
+
+            answer[i] = list.get(k-1);
+
+            System.out.println(answer[i]);
         }
         return answer;
     }
