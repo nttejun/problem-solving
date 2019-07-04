@@ -39,8 +39,7 @@ public class ProgLevel1Completion {
         String[] participant = {"t", "tt", "ttt"};
         String[] completion = {"t", "tt"};
         ProgLevel1Completion p = new ProgLevel1Completion();
-        //p.solution(participant, completion);
-        //p.solution1(participant, completion);
-        p.solution2(participant, completion);
+        p.solution(participant, completion);
+        p.solution1(participant, completion);
     }
 }
