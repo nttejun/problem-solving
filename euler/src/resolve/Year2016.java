@@ -1,6 +1,10 @@
 package resolve;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 public class Year2016 {
+
     private String solution(int m, int n) {
         int days = 0;
 
@@ -40,9 +44,16 @@ public class Year2016 {
             return 30;
     }
 
+    private String getDayName(int m, int d){
+        Calendar cal = new Calendar.Builder().setCalendarType("iso8601")
+                .setDate(2016, m - 1, d).build();
+        return cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, new Locale("ko-KR")).toUpperCase();
+    }
+
     public static void main(String[] args) {
 
         Year2016 year2016 = new Year2016();
         System.out.println(year2016.solution(5, 24));
+        System.out.println(year2016.getDayName(5, 24));
     }
 }
