@@ -28,7 +28,8 @@ public class ProgLv1NumberNotEqual {
 
         ProgLv1NumberNotEqual p = new ProgLv1NumberNotEqual();
         int[] a = {1, 20, 20, 4, 4, 30};
+        // 결과 : 1, 20 ,4, 30
 
-        System.out.println(p.solution(a));
+        p.solution(a);
     }
 }
