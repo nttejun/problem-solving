@@ -1,4 +1,11 @@
+/*
 package resolve;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+*/
 
 import org.junit.jupiter.api.Test;
 
@@ -6,8 +13,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by nttej on 2017-11-12.
- */
+ *//*
 
+
+*/
 /*
 
 1 day > person1 =  4 , person2 = 5
@@ -25,6 +34,7 @@ status > gap = 1
 4 5 1 = 2
 
 */
+
 
 public class Ebay4 {
 

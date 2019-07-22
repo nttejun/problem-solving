@@ -6,6 +6,7 @@ import java.util.Scanner;
  * Created by nttej on 2017-10-30.
  */
 
+
 public class Backjoon1476 {
 
     public void ready(int[] year){
@@ -86,5 +87,7 @@ public class Backjoon1476 {
 1 2 3 >> 5266
 15 28 19 >> 7980
 
-*/
+*//*
 
+
+*/
