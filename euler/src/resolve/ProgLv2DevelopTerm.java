@@ -1,47 +1,59 @@
 package resolve;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProgLv2DevelopTerm {
     public int[] solution(int[] progresses, int[] speeds) {
-        int[] answer = new int[progresses.length];
-        int[] prog = new int[progresses.length];
+
+        int[] remainProg = new int[progresses.length];
         int[] days = new int[progresses.length];
-        int count = 0;
-        int n = 0;
 
         for (int i = 0; i < progresses.length; i++) {
 
-            prog[i] = 100 - progresses[i];
+            remainProg[i] = 100 - progresses[i];
 
-            count = 0;
-            n = speeds[i];
+        }
 
-            for (int j = 0; j < 101; j++) {
+        int rProg = 0;
 
-                count++;
+        for(int i=0; i<progresses.length; i++){
 
-                if (prog[i] < n) {
-                    days[i] = count;
-                    j = 101;
+            rProg = speeds[i];
+
+            for(int j=0; j<=101; j++){
+                if(remainProg[i] <= rProg) {
+                    days[i] = j+1;
+                    break;
                 }
-
-                n = n + speeds[i];
-
+                rProg = rProg + speeds[i];
             }
         }
 
-        int index = 0;
-        count = 0;
+        List<Integer> list = new ArrayList<>();
 
-        for(int i = 0; i < progresses.length-1; i++){
-            if(days[index] > days[i+1]){
-                count++;
-            } else {
-                answer[i] = count;
-                System.out.println(count);
-                index = index + count;
-                count = 0;
+        int day = 0;
+
+        for(int i=0; i<days.length; i++){
+            day++;
+
+            if(i == days.length-1){
+                list.add(day);
+                break;
+            }
+
+            if(days[i] < days[i+1]){
+                list.add(day);
+                day = 0;
             }
         }
+
+        int[] answer = new int[list.size()];
+        for(int i=0; i<list.size(); i++){
+            answer[i] = list.get(i);
+        }
+
+
         return answer;
     }
 
