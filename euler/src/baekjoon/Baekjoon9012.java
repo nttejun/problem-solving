@@ -1,14 +1,13 @@
 package baekjoon;
 
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
 
 /**
  * Created by nttej on 2017-11-14.

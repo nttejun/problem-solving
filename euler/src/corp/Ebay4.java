@@ -7,9 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 */
 
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /**
  * Created by nttej on 2017-11-12.

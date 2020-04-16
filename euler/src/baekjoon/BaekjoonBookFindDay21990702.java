@@ -5,9 +5,10 @@ package baekjoon;
  * 무슨 요일인지 구하시오
  */
 
-import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /***
  * if ((year % 4 == 0) && (year % 100 != 0))
