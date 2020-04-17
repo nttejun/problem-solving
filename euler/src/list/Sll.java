@@ -10,12 +10,12 @@ public class Sll<T> {
     private T data;
   }
 
-  public Sll(int size){
+  public Sll(){
     this.headNode = null;
-    this.size = size;
+    this.size = 0;
   }
 
-  private void insertAtHead(T data) {
+  public void insertAtHead(T data) {
     Node node = new Node();
     node.data = data;
     node.nextNode = headNode;
@@ -23,7 +23,7 @@ public class Sll<T> {
     size++;
   }
 
-  private void insertAtEnd(T data) {
+  public void insertAtEnd(T data) {
     Node newNode = new Node();
     newNode.data = data;
 
@@ -54,17 +54,19 @@ public class Sll<T> {
     return deleteNode.data;
   }
 
-  private boolean isEmpty() {
-    return headNode == null;
+  public T peek(){
+    if(headNode == null){
+      return null;
+    }
+    return headNode.data;
   }
 
-  public static void main(String[] args){
+  public int getSize(){
+    return size;
+  }
 
-    Sll<Integer> sll = new Sll<>(5);
-    sll.insertAtEnd(5);
-    sll.insertAtEnd(2);
-    sll.deleteAtHead();
-    System.out.println(sll.headNode);
+  public boolean isEmpty() {
+    return headNode == null;
   }
 
 }
