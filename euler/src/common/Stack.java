@@ -34,7 +34,7 @@ public class Stack<T> {
     return temp;
   }
 
-  private boolean isEmpty() {
+  public boolean isEmpty() {
     return headNode == null;
   }
 
