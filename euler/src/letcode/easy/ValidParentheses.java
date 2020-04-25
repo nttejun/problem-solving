@@ -15,6 +15,7 @@ public class ValidParentheses {
       if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[') {
         stack.push(String.valueOf(s.charAt(i)));
       } else {
+        if(stack.isEmpty()) return false;
         switch (String.valueOf(s.charAt(i))) {
           case ")":
             if (!stack.pop().equals("(")) {
