@@ -1,4 +1,4 @@
-package daily;
+package geeksforgeeks;
 
 import org.junit.Test;
 
