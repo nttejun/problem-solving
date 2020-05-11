@@ -1,6 +1,5 @@
-package daily;
+package dailyprogramming;
 
-import common.DoublyLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
