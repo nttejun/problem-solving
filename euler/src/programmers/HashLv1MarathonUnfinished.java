@@ -18,8 +18,10 @@ public class HashLv1MarathonUnfinished {
 
   @Test
   public void test() {
-    String[] a = {"leo", "kiki", "eden"};
-    String[] b = {"eden", "kiki"};
-    solution(a, b);
+    String[] p = {"leo", "kiki", "eden"};
+    String[] c = {"eden", "kiki"};
+    solution(p, c);
   }
 }
+
+
