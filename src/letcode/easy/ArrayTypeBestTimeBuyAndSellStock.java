@@ -27,4 +27,10 @@ public class ArrayTypeBestTimeBuyAndSellStock {
     int[] prices = {1,2,3,4,5};
     Assert.assertEquals(4, maxProfit(prices));
   }
+
+  @Test
+  public void getMaxProfit_TEST_CASE3() {
+    int[] prices = {7,6,4,3,1};
+    Assert.assertEquals(0, maxProfit(prices));
+  }
 }
