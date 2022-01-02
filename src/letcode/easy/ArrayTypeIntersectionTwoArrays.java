@@ -27,14 +27,21 @@ public class ArrayTypeIntersectionTwoArrays {
   public void intersectionTwoArray_테스트_CASE1() {
     int[] numsFirst = {1, 2, 2, 1};
     int[] numsSeconds = {2, 2};
-    System.out.println(intersect(numsFirst, numsSeconds));
-    Assert.assertEquals(new int[]{2, 2}, intersect(numsFirst, numsSeconds));
+    String result = "";
+    for (int i : intersect(numsFirst, numsSeconds)) {
+      result += i;
+    }
+    Assert.assertEquals("22", result);
   }
 
   @Test
   public void intersectionTwoArray_테스트_CASE2() {
     int[] numsFirst = {4, 9, 5};
     int[] numsSeconds = {9, 4, 9, 8, 4};
-    Assert.assertEquals(new int[]{4, 9}, intersect(numsFirst, numsSeconds));
+    String result = "";
+    for (int i : intersect(numsFirst, numsSeconds)) {
+      result += i;
+    }
+    Assert.assertEquals("49", result);
   }
 }
