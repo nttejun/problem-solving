@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ce7f473-0caa-4926-999b-66f7dadf877b" name="Default Changelist" comment="" />
+    <list default="true" id="8ce7f473-0caa-4926-999b-66f7dadf877b" name="Default Changelist" comment="[Add] rotate image">
+      <change afterPath="$PROJECT_DIR$/src/letcode/easy/ArrayTypeRotateImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +12,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,12 +43,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ArrayTypeRotateImage.roatet_테스트_CASE1">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -58,6 +69,89 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayTypeRotateImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="problem-solving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="letcode.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="letcode.easy" />
+      <option name="MAIN_CLASS_NAME" value="letcode.easy.ArrayTypeRotateImage" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayTypeRotateImage.roatet_테스트_CASE1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="problem-solving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="letcode.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="letcode.easy" />
+      <option name="MAIN_CLASS_NAME" value="letcode.easy.ArrayTypeRotateImage" />
+      <option name="METHOD_NAME" value="roatet_테스트_CASE1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringTypeReverseInteger" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="problem-solving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="letcode.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="letcode.easy" />
+      <option name="MAIN_CLASS_NAME" value="letcode.easy.StringTypeReverseInteger" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringTypeReverseInteger.reverse_테스트_CASE3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="problem-solving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="letcode.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="letcode.easy" />
+      <option name="MAIN_CLASS_NAME" value="letcode.easy.StringTypeReverseInteger" />
+      <option name="METHOD_NAME" value="reverse_테스트_CASE3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringTypeReverseInteger.reverse_테스트_CASE4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="problem-solving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="letcode.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="letcode.easy" />
+      <option name="MAIN_CLASS_NAME" value="letcode.easy.StringTypeReverseInteger" />
+      <option name="METHOD_NAME" value="reverse_테스트_CASE4" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,6 +181,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ArrayTypeRotateImage.roatet_테스트_CASE1" />
+        <item itemvalue="JUnit.ArrayTypeRotateImage" />
+        <item itemvalue="JUnit.StringTypeReverseInteger" />
+        <item itemvalue="JUnit.StringTypeReverseInteger.reverse_테스트_CASE4" />
+        <item itemvalue="JUnit.StringTypeReverseInteger.reverse_테스트_CASE3" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -97,16 +200,284 @@
       <option name="presentableId" value="Default" />
       <updated>1637892051715</updated>
       <workItem from="1637892052854" duration="138000" />
+      <workItem from="1641004281923" duration="20070000" />
+      <workItem from="1641205798869" duration="30110000" />
     </task>
+    <task id="LOCAL-00001" summary="[Add] gitignore 파일">
+      <created>1641004343366</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641004343366</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[Add] best time buy and sell stock 테스트 케이스 1번 통과 코드">
+      <created>1641006644115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641006644115</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[Modify] best time buy and sell stock 테스트 코드 추가">
+      <created>1641019730565</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641019730565</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[Add] rotate array">
+      <created>1641019781002</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641019781002</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[Add] contains duplicate">
+      <created>1641094432194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641094432194</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[Add] single number">
+      <created>1641098011843</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1641098011843</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[Add] intersection of two arrays 파일">
+      <created>1641112425904</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1641112425904</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[Add] intersection two arrays 파일">
+      <created>1641112703012</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1641112703012</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[Add] plus one">
+      <created>1641212011157</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1641212011157</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[Add] move zeroes">
+      <created>1641217388987</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641217388987</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[Add] two sum">
+      <created>1641219225325</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641219225325</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[Add] valid sudoku">
+      <created>1641298793620</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641298793620</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[Add] reverse string">
+      <created>1641391790703</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641391790703</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[Add] reverse integer">
+      <created>1641394809282</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641394809282</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[Modify] reverse integer 테스트 케이스 추가">
+      <created>1641471722188</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641471722188</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[Add] gitignore 파일" />
+    <MESSAGE value="[Add] best time buy and sell stock 테스트 케이스 1번 통과 코드" />
+    <MESSAGE value="[Modify] best time buy and sell stock 테스트 코드 추가" />
+    <MESSAGE value="[Add] rotate array" />
+    <MESSAGE value="[Add] contains duplicate" />
+    <MESSAGE value="[Add] single number" />
+    <MESSAGE value="[Add] intersection of two arrays 파일" />
+    <MESSAGE value="[Add] intersection two arrays 파일" />
+    <MESSAGE value="[Add] plus one" />
+    <MESSAGE value="[Add] move zeroes" />
+    <MESSAGE value="[Add] two sum" />
+    <MESSAGE value="[Add] valid sudoku" />
+    <MESSAGE value="[Add] reverse string" />
+    <MESSAGE value="[Add] reverse integer" />
+    <MESSAGE value="[Modify] reverse integer 테스트 케이스 추가" />
+    <MESSAGE value="[Add] rotate image" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add] rotate image" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1916" y="120" key="CommitChangelistDialog2" timestamp="1641478037027">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state x="2234" y="112" key="CommitChangelistDialog2/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641006643991" />
+    <state x="2234" y="112" key="CommitChangelistDialog2/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641004355728" />
+    <state x="2597" y="98" key="CommitChangelistDialog2/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641219225191" />
+    <state x="1916" y="120" key="CommitChangelistDialog2/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037027" />
+    <state width="1061" height="351" key="GridCell.Tab.0.bottom" timestamp="1641478037091">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.0.bottom/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368663" />
+    <state width="957" height="251" key="GridCell.Tab.0.bottom/0.0.1680.1050/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641210669660" />
+    <state width="1878" height="364" key="GridCell.Tab.0.bottom/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165697" />
+    <state width="957" height="250" key="GridCell.Tab.0.bottom/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641219226425" />
+    <state width="1061" height="351" key="GridCell.Tab.0.bottom/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037091" />
+    <state width="957" height="329" key="GridCell.Tab.0.bottom/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282478" />
+    <state width="1061" height="351" key="GridCell.Tab.0.center" timestamp="1641478037090">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.0.center/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368639" />
+    <state width="957" height="251" key="GridCell.Tab.0.center/0.0.1680.1050/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641210669659" />
+    <state width="1878" height="364" key="GridCell.Tab.0.center/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165664" />
+    <state width="957" height="250" key="GridCell.Tab.0.center/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641219226424" />
+    <state width="1061" height="351" key="GridCell.Tab.0.center/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037090" />
+    <state width="957" height="329" key="GridCell.Tab.0.center/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282476" />
+    <state width="1061" height="351" key="GridCell.Tab.0.left" timestamp="1641478037089">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.0.left/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368623" />
+    <state width="957" height="251" key="GridCell.Tab.0.left/0.0.1680.1050/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641210669658" />
+    <state width="1878" height="364" key="GridCell.Tab.0.left/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165641" />
+    <state width="957" height="250" key="GridCell.Tab.0.left/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641219226424" />
+    <state width="1061" height="351" key="GridCell.Tab.0.left/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037089" />
+    <state width="957" height="329" key="GridCell.Tab.0.left/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282476" />
+    <state width="1061" height="351" key="GridCell.Tab.0.right" timestamp="1641478037091">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.0.right/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368652" />
+    <state width="957" height="251" key="GridCell.Tab.0.right/0.0.1680.1050/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641210669659" />
+    <state width="1878" height="364" key="GridCell.Tab.0.right/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165683" />
+    <state width="957" height="250" key="GridCell.Tab.0.right/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641219226425" />
+    <state width="1061" height="351" key="GridCell.Tab.0.right/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037091" />
+    <state width="957" height="329" key="GridCell.Tab.0.right/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282477" />
+    <state width="1061" height="351" key="GridCell.Tab.1.bottom" timestamp="1641478037092">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.1.bottom/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368912" />
+    <state width="1878" height="364" key="GridCell.Tab.1.bottom/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165922" />
+    <state width="957" height="329" key="GridCell.Tab.1.bottom/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641112615287" />
+    <state width="1061" height="351" key="GridCell.Tab.1.bottom/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037092" />
+    <state width="957" height="329" key="GridCell.Tab.1.bottom/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282480" />
+    <state width="1061" height="351" key="GridCell.Tab.1.center" timestamp="1641478037092">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.1.center/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368890" />
+    <state width="1878" height="364" key="GridCell.Tab.1.center/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165886" />
+    <state width="957" height="329" key="GridCell.Tab.1.center/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641112615287" />
+    <state width="1061" height="351" key="GridCell.Tab.1.center/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037092" />
+    <state width="957" height="329" key="GridCell.Tab.1.center/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282479" />
+    <state width="1061" height="351" key="GridCell.Tab.1.left" timestamp="1641478037091">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.1.left/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368876" />
+    <state width="1878" height="364" key="GridCell.Tab.1.left/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165864" />
+    <state width="957" height="329" key="GridCell.Tab.1.left/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641112615286" />
+    <state width="1061" height="351" key="GridCell.Tab.1.left/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037091" />
+    <state width="957" height="329" key="GridCell.Tab.1.left/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282478" />
+    <state width="1061" height="351" key="GridCell.Tab.1.right" timestamp="1641478037092">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1878" height="364" key="GridCell.Tab.1.right/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009368902" />
+    <state width="1878" height="364" key="GridCell.Tab.1.right/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641010165907" />
+    <state width="957" height="329" key="GridCell.Tab.1.right/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641112615287" />
+    <state width="1061" height="351" key="GridCell.Tab.1.right/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641478037092" />
+    <state width="957" height="329" key="GridCell.Tab.1.right/0.25.1920.1136@0.25.1920.1136" timestamp="1641164282480" />
     <state x="2128" y="133" key="SettingsEditor" timestamp="1637892189975">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
     <state x="2128" y="133" key="SettingsEditor/0.23.1680.995/1680.23.1920.1057@1680.23.1920.1057" timestamp="1637892189975" />
+    <state width="556" height="445" key="SwitcherDM" timestamp="1641214789603">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="556" height="445" key="SwitcherDM/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641214789603" />
+    <state x="2305" y="255" key="run.anything.popup" timestamp="1641005663780">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2305" y="255" key="run.anything.popup/0.25.1680.1025/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641005663780" />
+    <state x="2305" y="261" width="670" height="661" key="search.everywhere.popup" timestamp="1641298590409">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1641009108145" />
+    <state x="2305" y="252" width="670" height="636" key="search.everywhere.popup/0.25.1680.1025/1680.25.1920.1016@1680.25.1920.1016" timestamp="1641218966192" />
+    <state x="2305" y="261" width="670" height="661" key="search.everywhere.popup/0.25.1680.986/1680.25.1920.1055@1680.25.1920.1055" timestamp="1641298590409" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeBestTimeBuyAndSellStock.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeRotateArray.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeRotateArray.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeRotateArray.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeIntersectionTwoArrays.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeMoveZeroes.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeTwoSum.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeValidSudoku.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/letcode/easy/ArrayTypeRotateImage.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
