@@ -5,14 +5,35 @@ import org.junit.Test;
 
 public class StringTypeStringToInteger {
   public int myAtoi(String s) {
-    s = s.replaceAll("^\\s+", "");
-    boolean isMinus = s.startsWith("-") ? true : false;
-    String replaceString = s.replaceAll("[^0-9]", "");
-
-    if (isMinus) {
-      return Integer.parseInt(replaceString) * -1;
+    long answer = 0;
+    boolean isPositive = true, fixed = false;
+    for (int index = 0; index < s.length(); index++) {
+      char chr = s.charAt(index);
+      if(chr == ' ') {
+        if(fixed)
+          break;
+        continue;
+      }
+      if (chr == '+'){
+        if(fixed)
+          break;
+        isPositive = false;
+        fixed = true;
+      }
+      else if('0' <= chr && chr <= '9') {
+        fixed = true;
+        answer = (answer * 10) + (chr - '0');
+        if(answer > Integer.MAX_VALUE) {
+          return (isPositive) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+        }
+      }
+      else {
+        break;
+      }
     }
-    return Integer.parseInt(replaceString);
+    if(!isPositive)
+      answer *= -1L;
+    return (int)answer;
   }
 
   @Test
