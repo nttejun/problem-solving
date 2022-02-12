@@ -10,20 +10,19 @@ public class StringTypeLongestCommonPrefix {
       return null;
     }
 
-    if (strs.length < 2) {
-      return strs[0];
-    }
-
     String tempStr = strs[0];
+    if (strs.length == 1) {
+      return tempStr;
+    }
 
     for (int i = 1; i < strs.length; i++) {
       if (tempStr.length() == 0) {
-        break;
+        return tempStr;
       }
 
       String changeStr = "";
       for(int j = 0; j < strs[i].length(); j++) {
-        if (tempStr.length() < j-1) {
+        if (tempStr.length() == j) {
           break;
         }
         if (tempStr.charAt(j) != strs[i].charAt(j)) {
@@ -54,7 +53,7 @@ public class StringTypeLongestCommonPrefix {
   @Test
   public void TEST_3() {
     String[] str = new String[]{"aaa", "aa", "aaa"};
-    String result = "";
+    String result = "aa";
     Assert.assertEquals(result, longestCommonPrefix(str));
   }
 }
