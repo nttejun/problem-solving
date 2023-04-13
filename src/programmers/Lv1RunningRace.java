@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class Lv1RunningRace {
 
-  // https://school.programmers.co.kr/learn/courses/30/lessons/178871
+  //https://school.programmers.co.kr/learn/courses/30/lessons/178871
   @Test
   public void TEST_RUNNING_RACE() {
     String[] players = {"mumu", "soe", "poe", "kai", "mine"};
