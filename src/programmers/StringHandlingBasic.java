@@ -9,9 +9,29 @@ package programmers;
  * s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져 있습니다.
  */
 public class StringHandlingBasic {
+
+  /***
+   * 정규표현식 방법
+   * ^ : 시작, $ : 끝, [0-9] : 0부터 9, [a-Z] : a 부터 Z까지, + : 해당 문자가 반복사용 가능
+   */
   public boolean solution(String s) {
     if((s.length() == 4 || s.length() == 6) && s.matches("^[0-9]+$")) {
       return true;
+    }
+    return false;
+  }
+
+  /***
+   * 타입변환으로 숫자가 아닐시 Exception 발생시키는 방법
+   */
+  public boolean solutionExceptionVersion(String s) {
+    try {
+      Integer.parseInt(s);
+      if((s.length() == 4 || s.length() == 6) && s.matches("^[0-9]+$")) {
+        return true;
+      }
+    } catch (Exception e) {
+      return false;
     }
     return false;
   }
