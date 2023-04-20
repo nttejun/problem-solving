@@ -69,4 +69,10 @@ public class Lv1StringPrint {
 
     System.out.println(answer);
   }
+
+  @Test
+  public void 특수문자_출력하기() {
+    // target = !@#$%^&*(\'"<>?:;
+    System.out.println("!@#$%^&*(\\'\"<>?:;");
+  }
 }
