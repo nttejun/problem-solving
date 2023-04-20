@@ -4,6 +4,7 @@ import java.util.Scanner;
 import org.junit.Test;
 
 public class Lv1StringPrint {
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
@@ -92,14 +93,14 @@ public class Lv1StringPrint {
     String a = sc.next();
     String b = sc.next();
 
-    System.out.print(a+b);
+    System.out.print(a + b);
   }
 
   @Test
   public void 한줄로_출력하기() {
     Scanner sc = new Scanner(System.in);
     String a = sc.next();
-    for (int i=0; i<a.length(); i++) {
+    for (int i = 0; i < a.length(); i++) {
       System.out.println(a.charAt(i));
     }
   }
@@ -108,10 +109,33 @@ public class Lv1StringPrint {
   public void 홀짝_구분하기() {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
-    if (n%2 == 0) {
+    if (n % 2 == 0) {
       System.out.println(n + " is even");
     } else {
       System.out.println(n + " is odd");
     }
+  }
+
+  @Test
+  public void 문자열_겹쳐쓰기() {
+    String my_string = "He11oWor1d";
+    String overwrite_string = "lloWorl";
+    int s = 2;
+
+    String answer = "";
+
+    for(int i=0; i<s; i++) {
+      answer += my_string.charAt(i);
+    }
+
+    answer += overwrite_string;
+
+    int idx = s + overwrite_string.length();
+
+    for(int i=idx; i<my_string.length(); i++) {
+      answer += my_string.charAt(i);
+    }
+
+    System.out.println(answer);
   }
 }
