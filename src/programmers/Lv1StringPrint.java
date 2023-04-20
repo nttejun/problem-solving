@@ -103,4 +103,15 @@ public class Lv1StringPrint {
       System.out.println(a.charAt(i));
     }
   }
+
+  @Test
+  public void 홀짝_구분하기() {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    if (n%2 == 0) {
+      System.out.println(n + " is even");
+    } else {
+      System.out.println(n + " is odd");
+    }
+  }
 }
