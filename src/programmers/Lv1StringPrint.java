@@ -21,12 +21,12 @@ public class Lv1StringPrint {
     System.out.println("b = " + b);
   }
 
-  public void 문자열_반복해서_출력하기(){
+  public void 문자열_반복해서_출력하기() {
     Scanner sc = new Scanner(System.in);
     String str = sc.next();
     int n = sc.nextInt();
 
-    for(int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
       System.out.print(str);
     }
   }
@@ -39,9 +39,9 @@ public class Lv1StringPrint {
     int big = 65;
     int small = 97;
 
-    for(int i=0; i<a.length(); i++) {
+    for (int i = 0; i < a.length(); i++) {
       int target = a.charAt(i);
-      if (target >= 65 && target <97) {
+      if (target >= 65 && target < 97) {
         int gap = target - big;
         gap += small;
         System.out.print((char) gap);
@@ -60,7 +60,7 @@ public class Lv1StringPrint {
 
     String answer = "";
     for (char c : a.toCharArray()) {
-      if (c >= 65 && c <97) {
+      if (c >= 65 && c < 97) {
         answer += Character.toLowerCase(c);
       } else {
         answer += Character.toUpperCase(c);
@@ -74,5 +74,24 @@ public class Lv1StringPrint {
   public void 특수문자_출력하기() {
     // target = !@#$%^&*(\'"<>?:;
     System.out.println("!@#$%^&*(\\'\"<>?:;");
+  }
+
+  @Test
+  public void 덧셈식_출력하기() {
+    Scanner sc = new Scanner(System.in);
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+
+    int sum = a + b;
+    System.out.println(a + " + " + b + " = " + sum);
+  }
+
+  @Test
+  public void 문자열_붙여서_출력하기() {
+    Scanner sc = new Scanner(System.in);
+    String a = sc.next();
+    String b = sc.next();
+
+    System.out.print(a+b);
   }
 }
