@@ -36,6 +36,8 @@ public class HashLv1PlayerNotFinish {
     return answer;
   }
 
+
+  // 해시를 사용하지 않아 시간 제약에 걸림. Arrays.asList(completion) = O(n), filter() = O(n), findFirst 최악의 경우 = O(n)
   public String solutionStreamVersion(String[] participant, String[] completion) {
     Optional<String> target = Arrays.stream(participant)
         .filter(s -> !Arrays.asList(completion).contains(s))
