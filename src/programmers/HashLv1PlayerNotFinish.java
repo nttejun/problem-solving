@@ -1,7 +1,9 @@
 package programmers;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -34,6 +36,14 @@ public class HashLv1PlayerNotFinish {
     return answer;
   }
 
+  public String solutionStreamVersion(String[] participant, String[] completion) {
+    Optional<String> target = Arrays.stream(participant)
+        .filter(s -> !Arrays.asList(completion).contains(s))
+        .findFirst();
+
+    return target.get();
+  }
+
   @Test
   public void 테스트_성공_케이스_1(){
     HashLv1PlayerNotFinish hashLv1PlayerNotFinish = new HashLv1PlayerNotFinish();
@@ -55,5 +65,28 @@ public class HashLv1PlayerNotFinish {
     String[] p = new String[]{"mislav", "stanko", "mislav", "ana"};
     String[] c = new String[]{"stanko", "ana", "mislav"};
     Assert.assertEquals(hashLv1PlayerNotFinish.solution(p, c), "mislav");
+  }
+
+  @Test
+  public void 테스트_성공_케이스_스트림_버전_1(){
+    HashLv1PlayerNotFinish hashLv1PlayerNotFinish = new HashLv1PlayerNotFinish();
+    String[] p = new String[]{"leo", "kiki", "eden"};
+    String[] c = new String[]{"eden", "kiki"};
+    Assert.assertEquals(hashLv1PlayerNotFinish.solutionStreamVersion(p, c), "leo");
+  }
+
+  @Test
+  public void 테스트_성공_케이스_스트림_버전_2(){
+    HashLv1PlayerNotFinish hashLv1PlayerNotFinish = new HashLv1PlayerNotFinish();
+    String[] p = new String[]{"marina", "josipa", "nikola", "vinko", "filipa"};
+    String[] c = new String[]{"josipa", "filipa", "marina", "nikola"};
+    Assert.assertEquals(hashLv1PlayerNotFinish.solutionStreamVersion(p, c), "vinko");
+  }
+  @Test
+  public void 테스트_성공_케이스_스트림_버전_3(){
+    HashLv1PlayerNotFinish hashLv1PlayerNotFinish = new HashLv1PlayerNotFinish();
+    String[] p = new String[]{"mislav", "stanko", "mislav", "ana"};
+    String[] c = new String[]{"stanko", "ana", "mislav"};
+    Assert.assertEquals(hashLv1PlayerNotFinish.solutionStreamVersion(p, c), "mislav");
   }
 }
