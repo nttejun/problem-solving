@@ -1,32 +1,36 @@
 package programmers;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Comparator;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SortingLv2LargestNumber {
+
   public String solution(int[] numbers) {
-    List<Integer> list = new ArrayList<>();
+
+    Integer[] arr = new Integer[numbers.length];
     for (int i = 0; i < numbers.length; i++) {
-      int j= i;
-      int limit = 0;
-      String temp = "";
-      while (limit < numbers.length) {
-        if(j == numbers.length) {
-          j = 0;
-        }
-        temp += numbers[j];
-        j++;
-        limit++;
-      }
-      list.add(Integer.parseInt(temp));
+      arr[i] = numbers[i];
     }
 
-    Collections.sort(list);
+    Arrays.sort(arr, new Comparator<Integer>() {
+      @Override
+      public int compare(Integer a, Integer b) {
+        String strA = String.valueOf(a);
+        String strB = String.valueOf(b);
+        char charA = strA.charAt(0);
+        char charB = strB.charAt(0);
+        return Character.compare(charA, charB);
+      }
+    });
 
-    return String.valueOf(list.get(0));
+    String answer = "";
+    for (int i = arr.length - 1; i >= 0; i--) {
+      answer += arr[i];
+    }
+
+    return answer;
   }
 
   @Test
