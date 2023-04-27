@@ -9,27 +9,24 @@ public class SortingLv2LargestNumber {
 
   public String solution(int[] numbers) {
 
-    Integer[] arr = new Integer[numbers.length];
-    for (int i = 0; i < numbers.length; i++) {
-      arr[i] = numbers[i];
+    String answer = "";
+    boolean except = true;
+    String[] num = new String[numbers.length];
+
+    for(int i = 0; i < num.length; i++){
+      num[i] = String.valueOf(numbers[i]);
+      if(numbers[i] != 0) except = false;
     }
 
-    Arrays.sort(arr, new Comparator<Integer>() {
+    Arrays.sort(num, new Comparator<String>(){
       @Override
-      public int compare(Integer a, Integer b) {
-        String strA = String.valueOf(a);
-        String strB = String.valueOf(b);
-        char charA = strA.charAt(0);
-        char charB = strB.charAt(0);
-        return Character.compare(charA, charB);
+      public int compare(String n1, String n2) {
+        return (n2+n1).compareTo(n1+n2);
       }
     });
-
-    String answer = "";
-    for (int i = arr.length - 1; i >= 0; i--) {
-      answer += arr[i];
-    }
-
+    for(int i = 0; i < num.length; i++)
+      answer += num[i];
+    if(except) answer = "0";
     return answer;
   }
 
