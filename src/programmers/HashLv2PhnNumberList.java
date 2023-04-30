@@ -33,5 +33,7 @@ public class HashLv2PhnNumberList {
   public void TEST() {
     solution(new String[]{"119", "97674223", "1195524421"});
     solution(new String[]{"123", "456", "789"});
+    solutionSortingVersion(new String[]{"119", "97674223", "1195524421"});
+    solutionSortingVersion(new String[]{"1233", "456", "789"});
   }
 }
