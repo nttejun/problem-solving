@@ -1,17 +1,22 @@
 package programmers;
 
+import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SortingLv2H2Index {
+
   public int solution(int[] citations) {
     int answer = 0;
-    int length = citations.length;
-    int sum = 0;
-    for (int i : citations) {
-      sum += i;
+    Arrays.sort(citations);
+    for (int i=0; i<citations.length; i++) {
+      int smaller = Math.min(citations[i], citations.length-i);
+
+      // 오름차순 이므로 for문이 끝날 때까지 최댓값 있을 경우 갱신이 필요
+      if(smaller >= answer) {
+        answer = Math.max(answer, smaller);
+      }
     }
-    answer = sum / length;
     return answer;
   }
 
