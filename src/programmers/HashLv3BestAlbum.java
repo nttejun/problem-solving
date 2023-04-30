@@ -1,69 +1,48 @@
 package programmers;
 
-import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import org.junit.Test;
 
 public class HashLv3BestAlbum {
 
   public static int[] solution(String[] genres, int[] plays) {
-    int[] answer = new int[genres.length];
-    String[] genresUnique = new String[genres.length];
+    ArrayList<Integer> answer = new ArrayList<>();
 
-    Map<String, Integer> genresKey = new HashMap<>();
-    Map<String, Integer> uniqueNumberKey = new HashMap<>();
-
-    for (int i = 0; i < genres.length; i++) {
-      genresKey.put(genres[i] + i, plays[i]);
-      uniqueNumberKey.put(genres[i] + i, i);
-      genresUnique[i] = genres[i] + i;
-    }
-
-    List<Map.Entry<String, Integer>> genresKeyList = new LinkedList<>(genresKey.entrySet());
-    genresKeyList.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
-
-    List<Map.Entry<String, Integer>> uniqueNumberKeyList = new LinkedList<>(
-        uniqueNumberKey.entrySet());
-    uniqueNumberKeyList.sort(Map.Entry.comparingByValue());
-
-    for (int i = 0; i < genresKeyList.size() - 1; i++) {
-
-      Map<String, Integer> sameList = new HashMap<>();
-      int j = i;
-      int pass = 0;
-
-      while (genresKeyList.get(j + 1) != null && genresKeyList.get(i).getValue() == genresKeyList
-          .get(j + 1).getValue()) {
-        sameList.put(genresKeyList.get(j + 1).getKey(),
-            uniqueNumberKey.get(genresKeyList.get(j + 1).getKey()));
-        j++;
-        pass++;
-      }
-
-      if (pass != 0) {
-        sameList
-            .put(genresKeyList.get(i).getKey(), uniqueNumberKey.get(genresKeyList.get(i).getKey()));
-
-        List<Map.Entry<String, Integer>> sameKeyList = new LinkedList<>(sameList.entrySet());
-        sameKeyList.sort(Map.Entry.comparingByValue());
-
-        for (int k = 0; k < sameKeyList.size(); k++) {
-          answer[i + k] = sameKeyList.get(k).getValue();
-        }
-
-        i += pass;
-        sameList.clear();
+    HashMap<String, Integer> num = new HashMap<>(); // 장르별 총 개수
+    HashMap<String, HashMap<Integer, Integer>> music = new HashMap<>(); // 장르에 속하는 노래 및 재생횟수
+    for(int i = 0; i < plays.length; i++) {
+      if(!num.containsKey(genres[i])) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(i, plays[i]);
+        music.put(genres[i], map);
+        num.put(genres[i], plays[i]);
       } else {
-        answer[i] = uniqueNumberKey.get(i);
+        music.get(genres[i]).put(i, plays[i]);
+        num.put(genres[i], num.get(genres[i]) + plays[i]);
       }
     }
 
-    return answer;
-  }
+    List<String> keySet = new ArrayList(num.keySet());
 
+    // 장르별 최대 2개라 비교가능
+    Collections.sort(keySet, (s1, s2) -> num.get(s2) - (num.get(s1)));
+
+    for(String key : keySet) {
+      HashMap<Integer, Integer> map = music.get(key);
+      List<Integer> genre_key = new ArrayList(map.keySet());
+
+      Collections.sort(genre_key, (s1, s2) -> map.get(s2) - (map.get(s1)));
+
+      answer.add(genre_key.get(0));
+      if(genre_key.size() > 1)
+        answer.add(genre_key.get(1));
+    }
+
+    return answer.stream().mapToInt(i -> i).toArray();
+  }
 
   @Test
   public void TEST_성공케이스() {
