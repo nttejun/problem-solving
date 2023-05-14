@@ -29,7 +29,7 @@ public class SearchLv2FindDecimal {
     }
 
     for(int i = 2; i <= Math.sqrt(number); i++) {
-      if (number % 2 == 0) {
+      if (number % i == 0) {
         return false;
       }
     }
