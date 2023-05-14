@@ -1,31 +1,54 @@
 package programmers;
 
+import java.util.HashSet;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SearchLv2FindDecimal {
+
+  HashSet<Integer> set = new HashSet<>();
+
   public int solution(String numbers) {
     int answer = 0;
-    int[] num = new int[numbers.length()];
 
-    // 백트래킹 한다 -> 소수인지 확인한다
+    recursion("", numbers);
+
+    for (int number : set) {
+      if (isPrime(number)) {
+        answer++;
+      }
+    }
 
     return answer;
   }
 
-  public boolean isPrimeNumber(int num) {
-    if (num <= 1) return false;
-    for ( int i = 2; i < Math.sqrt(num); i++) {
-      if ( i % num == 0 ) {
+  private boolean isPrime(int number) {
+
+    if (number == 0 || number == 1) {
+      return false;
+    }
+
+    for(int i = 2; i <= Math.sqrt(number); i++) {
+      if (number % 2 == 0) {
         return false;
       }
     }
     return true;
   }
 
+  private void recursion(String word, String numbers) {
+    if (!word.equals("")) {
+      set.add(Integer.parseInt(word));
+    }
+
+    for (int i = 0; i < numbers.length(); i++) {
+      recursion(word + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i + 1));
+    }
+  }
+
   @Test
-  public void TEST_성공테스트() {
-    Assert.assertEquals(3, solution("011"));
-    Assert.assertEquals(2, solution("17"));
+  public void solution() {
+    String num = "17";
+    Assert.assertEquals(3, solution(num));
   }
 }
