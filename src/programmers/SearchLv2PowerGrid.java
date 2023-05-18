@@ -7,6 +7,7 @@ import java.util.Queue;
 import org.junit.Assert;
 import org.junit.Test;
 
+// 인접리스트로 해결 가능한 문제
 public class SearchLv2PowerGrid {
 
   public List<Integer>[] list;
@@ -14,16 +15,19 @@ public class SearchLv2PowerGrid {
   public int solution(int n, int[][] wires) {
     int answer = 100;
 
+    // 송전탑 리스트 만들고
     list = new List[n + 1];
     for (int i = 0; i <= n; i++) {
       list[i] = new ArrayList<>();
     }
 
+    // 송전탑 리스트에 인접한 송전탑 리스트를 추가해준다
     for (int[] wire : wires) {
       list[wire[0]].add(wire[1]);
       list[wire[1]].add(wire[0]);
     }
 
+    // 절대값이 가장 낮은 숫자
     for (int[] wire : wires) {
       int n1 = bfs(wire[0], wire[1], n);
       int n2 = bfs(wire[1], wire[0], n);
