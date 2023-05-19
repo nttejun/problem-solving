@@ -64,6 +64,8 @@ public class SearchLv2PowerGrid {
   @Test
   public void solution() {
     int[][] wires = {{1,3}, {2,3}, {3, 4}, {4, 5}, {4, 6}, {4, 7}, {7, 8}, {7, 9}};
+    System.out.println(wires[3][0]);
+    System.out.println(wires[3][1]);
     Assert.assertEquals(3, solution(9, wires));
   }
 }
