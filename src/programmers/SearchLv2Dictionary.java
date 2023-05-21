@@ -7,9 +7,11 @@ public class SearchLv2Dictionary {
 
   public int solution(String word) {
     String str = "AEIOU";
+    // 5번째 자리, 4번째 자리, 3번째 자리 .. 마다 증가되는 문자열 숫자
     int[] x = {781, 156, 31, 6, 1};
     int index,result = word.length();
 
+    // 다음 문자인 character index 값을 x[i] 값과 곱한다
     for(int i=0; i<word.length(); i++) {
       index = str.indexOf(word.charAt(i));
       result+=x[i]*index;
