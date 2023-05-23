@@ -1,5 +1,7 @@
 package programmers;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,6 +20,20 @@ public class SearchLv2Dictionary {
     }
 
     return result;
+  }
+
+  public int solutionDfs(String word) {
+    List<String> list = new ArrayList<>();
+    dfs(list, "", 0);
+    return list.indexOf(word);
+  }
+
+  public void dfs(List<String> list, String str, int len) {
+    if(len > 5) return;
+    list.add(str);
+    for(int i = 0; i < 5; i++) {
+      dfs(list, str + "AEIOU".charAt(i), len + 1);
+    }
   }
 
   @Test
