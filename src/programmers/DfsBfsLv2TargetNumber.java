@@ -12,28 +12,18 @@ public class DfsBfsLv2TargetNumber {
   public int solution(int[] numbers, int target) {
     nums = numbers;
     goal = target;
-
-    int answer = 0;
-    dfs(0, numbers.length);
-    return answer;
+    dfs(0, 0);
+    return count;
   }
 
-  public int dfs(int value, int len) {
-    int temp1 = 0;
-    int temp2 = 0;
-
-    for (int i = len; i < nums.length; i++) {
-      temp1 = dfs(nums[i] + value, i);
-      temp2 = dfs(nums[i] - value, i);
+  public void dfs(int value, int len) {
+    if(len == nums.length) {
+      if(value == goal) count++;
+      return;
     }
 
-    if(temp1 == goal) {
-      count++;
-    }
-
-    if(temp2 == goal) {
-      count++;
-    }
+    dfs(value + nums[len], len+1);
+    dfs(value - nums[len], len+1);
   }
 
   @Test
