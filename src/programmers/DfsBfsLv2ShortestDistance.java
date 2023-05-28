@@ -18,6 +18,7 @@ public class DfsBfsLv2ShortestDistance {
     return (answer > 0) ? answer : -1;
   }
 
+  // 동서남북
   static int[][] d = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
   public static void bfs(int[][] maps, int[][] visited, int n, int m) {
