@@ -9,6 +9,7 @@ public class HeapLv2MoreHot {
 // 섞은 음식 지수 = 가장 낮은 지수 + ( 두번째 낮은 지수 * 2 )
 // 모든 음식 지수 K 이상일 때 까지 반복한다
 // 반복 최소횟수
+
   /***
    * 1. 우선순위 정렬한다
    * 2. 비교한다
@@ -16,24 +17,29 @@ public class HeapLv2MoreHot {
    * 3. 낮다면 마지막 지수와 두번 째 마지막 지수를 섞는다
    */
 
-  public int solution(int[] scoville, int K) {
+  public int solution(int[] scoville, int k) {
     int answer = 0;
 
     PriorityQueue pQueue = new PriorityQueue();
+
     for (int i = 0; i < scoville.length; i++) {
       pQueue.add(scoville[i]);
     }
 
-    for (int i = 0; i < scoville.length; i++) {
-      answer++;
+    while (!pQueue.isEmpty()) {
+
+      if(pQueue.size() == 1) {
+        return -1;
+      }
+
       int temp = (int) pQueue.poll();
       int temp1 = (int) pQueue.poll();
 
-      if (temp >= 2) {
-        pQueue.add(temp);
+      if (temp >= k) {
         return answer;
       }
 
+      answer++;
       pQueue.add(temp + (temp1 * 2));
     }
 
@@ -47,7 +53,14 @@ public class HeapLv2MoreHot {
   @Test
   public void SOLUTION_TEST_1() {
     int k = 7;
-    int[] list = new int[]{1,2,3,9,10,12};
+    int[] list = new int[]{1, 2, 3, 9, 10, 12};
     Assert.assertEquals(2, solution(list, k));
+  }
+
+  @Test
+  public void SOLUTION_TEST_2() {
+    int k = 50;
+    int[] list = new int[]{1, 20, 15, 45, 5, 6};
+    Assert.assertEquals(3, solution(list, k));
   }
 }
