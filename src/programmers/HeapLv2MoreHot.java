@@ -23,24 +23,23 @@ public class HeapLv2MoreHot {
     PriorityQueue pQueue = new PriorityQueue();
 
     for (int i = 0; i < scoville.length; i++) {
-      pQueue.add(scoville[i]);
+      pQueue.offer(scoville[i]);
     }
 
-    while (!pQueue.isEmpty()) {
-
+    while ((int) pQueue.peek() <= k) {
       if(pQueue.size() == 1) {
         return -1;
       }
 
-      int temp = (int) pQueue.poll();
-      int temp1 = (int) pQueue.poll();
+      int firstVal = (int) pQueue.poll();
+      int secondVal = (int) pQueue.poll();
 
-      if (temp >= k) {
+      if (firstVal >= k) {
         return answer;
       }
 
       answer++;
-      pQueue.add(temp + (temp1 * 2));
+      pQueue.offer(firstVal + (secondVal * 2));
     }
 
     if (pQueue.size() == 0) {
