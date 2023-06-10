@@ -1,7 +1,6 @@
 package programmers;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,9 +9,9 @@ public class HeapLv3DiskController {
   public int solution(int[][] jobs) {
     int answer = 0;
 
-    Arrays.sort(jobs, Comparator.comparingInt(job -> job[1]));
+    Arrays.sort(jobs, (a, b) -> a[0] - b[0]);
 
-    PriorityQueue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(job -> job[1]));
+    PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
 
     int index = 0;
     int count = 0;
