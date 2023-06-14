@@ -1,27 +1,22 @@
 package programmers;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class GreedyLv2RemoveNumber {
+
   public String solution(String number, int k) {
-    String answer = "";
-    List<String> list = new ArrayList<>();
+    StringBuilder builder = new StringBuilder(number);
+    int length = builder.length() - k;
 
-    for(int i = 0; i < number.length(); i++) {
-      list.add(String.valueOf(number.charAt(i)));
+    for (int i = 1; i < builder.length() && builder.length() > length; i++) {
+      if (builder.charAt(i) > builder.charAt(i - 1)) {
+        builder.deleteCharAt(i - 1);
+        i = Math.max(0, i - 2);
+      }
     }
 
-    list.sort(Comparator.reverseOrder());
-
-    for (int i = 0; i < k; i++) {
-      answer += list.get(i);
-    }
-
-    return answer;
+    return builder.substring(0, length);
   }
 
   @Test
