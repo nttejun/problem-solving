@@ -1,22 +1,28 @@
 package programmers;
 
+import java.util.Stack;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class GreedyLv2RemoveNumber {
 
   public String solution(String number, int k) {
-    StringBuilder builder = new StringBuilder(number);
-    int length = builder.length() - k;
+    char[] result = new char[number.length() - k];
+    Stack<Character> stack = new Stack<>();
 
-    for (int i = 1; i < builder.length() && builder.length() > length; i++) {
-      if (builder.charAt(i) > builder.charAt(i - 1)) {
-        builder.deleteCharAt(i - 1);
-        i = Math.max(0, i - 2);
+    for (int i = 0; i < number.length(); i++) {
+      char c = number.charAt(i);
+      while (!stack.isEmpty() && stack.peek() < c && k-- > 0) {
+        stack.pop();
       }
+      stack.push(c);
     }
 
-    return builder.substring(0, length);
+    for (int i = 0; i < result.length; i++) {
+      result[i] = stack.get(i);
+    }
+
+    return new String(result);
   }
 
   @Test
