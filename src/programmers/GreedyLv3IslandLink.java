@@ -2,8 +2,6 @@ package programmers;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,9 +9,18 @@ import org.junit.Test;
  * 최소 비용으로 섬을 잇는
  */
 public class GreedyLv3IslandLink {
+
+  static int[] island;
+
+  public static int findPoint(int a) {
+    if (island[a] == a) {
+      return a;
+    } else {
+      return findPoint(island[a]);
+    }
+  }
+
   public int solution(int n, int[][] costs) {
-    int answer = 0;
-    int max = 0;
     Arrays.sort(costs, new Comparator<int[]>() {
       @Override
       public int compare(int[] arr1, int[] arr2) {
@@ -21,24 +28,22 @@ public class GreedyLv3IslandLink {
       }
     });
 
-    for (int[] arr : costs) {
-      max = Math.max(arr[1], max);
+    int ans = 0;
+    island = new int[n];
+    for (int i = 0; i < n; i++) {
+      island[i] = i;
     }
 
-    Map<Integer, Boolean> visited = new HashMap<>();
-    for (int i = 0 ; i < max; i++) {
-      visited.put(i, false);
-    }
-
-    for (int i = 0; i < costs.length; i++) {
-      if(!visited.getOrDefault(costs[i][0], false) || !visited.getOrDefault(costs[i][1], false)) {
-        visited.put(costs[i][0], true);
-        visited.put(costs[i][1], true);
-        answer += costs[i][2];
+    for (int[] i : costs) {
+      int a = findPoint(i[0]);
+      int b = findPoint(i[1]);
+      if (a != b) {
+        ans += i[2];
+        island[a] = b;
       }
     }
 
-    return answer;
+    return ans;
   }
 
   @Test
