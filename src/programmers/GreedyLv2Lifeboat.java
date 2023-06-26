@@ -7,7 +7,7 @@ import org.junit.Test;
 /***
  * 사람 + 사람.. <= limit
  * 가장 큰 수와 작은 수를 합해 최소 갯수로 count */
-public class GraphLv2Lifeboat {
+public class GreedyLv2Lifeboat {
 
   public int solution(int[] people, int limit) {
     int answer = 0;
