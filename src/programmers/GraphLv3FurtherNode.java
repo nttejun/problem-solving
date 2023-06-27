@@ -45,7 +45,6 @@ public class GraphLv3FurtherNode {
       for (int i=0; i<adj[node].size(); i++) {
         int next = adj[node].get(i);
 
-        System.out.println(visit[next]);
         if(visit[next] != 0) {
           continue;
         }
