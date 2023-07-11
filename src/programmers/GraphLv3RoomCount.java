@@ -3,6 +3,7 @@ package programmers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+import org.junit.Test;
 
 public class GraphLv3RoomCount {
 
@@ -79,4 +80,9 @@ public class GraphLv3RoomCount {
     return edge;
   }
 
+  @Test
+  public void solution() {
+    int[] arrows = {6, 6, 6, 4, 4, 4, 2, 2, 2, 0, 0, 0, 1, 6, 5, 5, 3, 6, 0};
+    solution(arrows);
+  }
 }
