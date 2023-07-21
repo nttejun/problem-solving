@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StackLv1FunctionDevlop {
+public class StackQueueLv1FunctionDevlop {
     public class Solution {
         public int[] solution(int[] arr) {
             List<Integer> list = new ArrayList<>();
