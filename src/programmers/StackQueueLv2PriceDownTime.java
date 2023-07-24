@@ -3,7 +3,7 @@ package programmers;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class ProgLv2PriceDownTime {
+public class StackQueueLv2PriceDownTime {
 
   public int[] solution(int[] prices) {
     int[] answer = new int[prices.length];
@@ -47,7 +47,7 @@ public class ProgLv2PriceDownTime {
   }
 
   public static void main(String[] args) {
-    ProgLv2PriceDownTime progLv2PriceDownTIme = new ProgLv2PriceDownTime();
+    StackQueueLv2PriceDownTime progLv2PriceDownTIme = new StackQueueLv2PriceDownTime();
     System.out.println(Arrays.toString(progLv2PriceDownTIme.solution(new int[]{1, 2, 3, 2, 3})));
     System.out.println(Arrays.toString(progLv2PriceDownTIme.solution1(new int[]{1, 2, 3, 2, 3})));
     System.out
