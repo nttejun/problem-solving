@@ -24,6 +24,20 @@ public class StackQueueLv2PriceDownTime {
     return answer;
   }
 
+  public int[] solutionRefactoringVersion(int[] prices) {
+    int len = prices.length;
+    int[] answer = new int[len];
+    int count = 0;
+    for (int i = 0; i < len; i++) {
+      for (int j = 0; j < len; j++) {
+        answer[i]++;
+        if (prices[i] <= prices[j])
+          break;
+      }
+    }
+    return answer;
+  }
+
   public int[] solution1(int[] prices) {
     Stack<Integer> indexs = new Stack<>();
     int i = 0;
