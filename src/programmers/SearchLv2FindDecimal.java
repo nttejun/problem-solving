@@ -65,4 +65,10 @@ public class SearchLv2FindDecimal {
     String num = "011";
     Assert.assertEquals(2, solution(num));
   }
+
+  @Test
+  public void solution_TEST_3456_SUCCESS() {
+    String num = "3456";
+    solution(num);
+  }
 }
