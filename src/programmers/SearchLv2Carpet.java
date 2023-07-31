@@ -56,6 +56,7 @@ public class SearchLv2Carpet {
       if (row > col)
         continue;
 
+      // yellow 크기를 구할 때, 노랑은 갈색 테두리 안에 위치하기 때문에 가로 -2, 세로 -2 조건에 해당되어야 한다
       if ((row - 2) * (col - 2) == yellow) {
         answer[0] = col;
         answer[1] = row;
