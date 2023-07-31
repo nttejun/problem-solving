@@ -22,6 +22,16 @@ public class SearchLv2FindDecimal {
     return answer;
   }
 
+  private void recursion(String word, String numbers) {
+    if (!word.equals("")) {
+      set.add(Integer.parseInt(word));
+    }
+
+    for (int i = 0; i < numbers.length(); i++) {
+      recursion(word + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i + 1));
+    }
+  }
+
   private boolean isPrime(int number) {
 
     if (number == 0 || number == 1) {
@@ -34,16 +44,6 @@ public class SearchLv2FindDecimal {
       }
     }
     return true;
-  }
-
-  private void recursion(String word, String numbers) {
-    if (!word.equals("")) {
-      set.add(Integer.parseInt(word));
-    }
-
-    for (int i = 0; i < numbers.length(); i++) {
-      recursion(word + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i + 1));
-    }
   }
 
   @Test
