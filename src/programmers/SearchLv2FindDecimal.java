@@ -11,6 +11,7 @@ public class SearchLv2FindDecimal {
   public int solution(String numbers) {
     int answer = 0;
 
+    //011
     recursion("", numbers);
 
     for (int number : set) {
@@ -47,8 +48,14 @@ public class SearchLv2FindDecimal {
   }
 
   @Test
-  public void solution() {
+  public void solution_TEST_17_SUCCESS() {
     String num = "17";
     Assert.assertEquals(3, solution(num));
+  }
+
+  @Test
+  public void solution_TEST_011_SUCCESS() {
+    String num = "011";
+    Assert.assertEquals(2, solution(num));
   }
 }
