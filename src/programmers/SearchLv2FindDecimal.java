@@ -11,7 +11,6 @@ public class SearchLv2FindDecimal {
   public int solution(String numbers) {
     int answer = 0;
 
-    //011
     recursion("", numbers);
 
     for (int number : set) {
