@@ -28,6 +28,7 @@ public class SearchLv2FindDecimal {
     }
 
     for (int i = 0; i < numbers.length(); i++) {
+      System.out.println("word = " + word + " / numbers = " + numbers + " / i = " + i + " /  word + numbers.charAt(i) = " + word + numbers.charAt(i) + " / numbers.substring(0, i) = " + numbers.substring(0, i) + " / numbers.substring(i + 1) = " + numbers.substring(i + 1));
       recursion(word + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i + 1));
     }
   }
@@ -44,6 +45,13 @@ public class SearchLv2FindDecimal {
       }
     }
     return true;
+  }
+
+  @Test
+  public void substring() {
+    String num = "11";
+    Assert.assertEquals("1", num.substring(0, 0) + num.substring(0 + 1));
+    Assert.assertEquals("", num.substring(0, 0));
   }
 
   @Test
