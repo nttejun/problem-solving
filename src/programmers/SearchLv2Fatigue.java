@@ -14,6 +14,10 @@ public class SearchLv2Fatigue {
     return count;
   }
 
+  // dfs : 던전을 깊이우선 탐색한다
+  // 1. 탐색이 가능한지 조건을 확인한다
+  // 2. 탐색을 완료하며 depth를 +1씩 증가시킨다
+  // 3. 현재 depth 값과 최대 max 값을 비교한다
   public void dfs(int depth, int k, int[][] dungeons) {
     for (int i = 0; i < dungeons.length; i++) {
       if(visited[i] || dungeons[i][0] > k) {
