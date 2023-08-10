@@ -13,6 +13,7 @@ public class DfsBfsLv3Network {
     int answer = 0;
     visit = new boolean[n];
 
+    // bfs 수행하면 연결되어 있는 네트워크는 visit[i] = true 상태이므로, 연결되지 않은 컴퓨터만 bfs 진행하고 카운트 + 1 한다
     for(int i=0; i<n; i++) {
       if(visit[i] == false) {
         bfs(i, computers, n);
@@ -22,6 +23,7 @@ public class DfsBfsLv3Network {
     return answer;
   }
 
+  // bfs 안에서 네트워크 연결된 컴퓨터는 visit[i] = true 설정으로 변경한다
   public void bfs(int i, int[][] computers, int n){
     queue.offer(i);
     visit[i] = true;
